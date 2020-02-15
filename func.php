@@ -30,7 +30,7 @@
         }
 
         else{
-            echo "Не верно!";
+            return $message = "Не верно!";
         }
         /*echo "<br>";
         foreach ($stacks as $stack) {
@@ -38,8 +38,9 @@
         }
         echo "<br>";*/
     }
-echo isAlgorithm("[]462j{j{781}}(2dh)((4))f([]843g)m{3{[()c9]0}g4}");
-
+//echo isAlgorithm("[]462j{j{781}}(2dh)((4))f([]843g)m{3{[()c9]0}g4}");
+$message = isAlgorithm($_POST['string']);
+header("Location: /?info=".$message);
 
 
 ?>

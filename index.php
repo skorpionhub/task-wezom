@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="#" method="POST" class="ui-form">
+<form action="func.php" method="POST" class="ui-form">
     <div class="form-row">
-        <input type="text" name="string" id="string" required autocomplete="off"><label for="string">выражение:</label>
+        <input type="text" name="string" id="string" required autocomplete="off"><label for="string">Арифметическое выражение:</label>
     </div>
     <div class="form-row">
-        <span>##</span>
+        <span><?php echo $_GET['info']?></span>
     </div>
     <p><input type="submit" value="Проверить"></p>
 </form>
