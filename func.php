@@ -1,13 +1,15 @@
 <?php
     function isAlgorithm($string)
     {
+        $parentheses = array('{', '(', '[','}', ')', ']');
         $parentheses_op = array('{', '(', '[');
         $parentheses_cl = array('}', ')', ']');
-        $stacks = array_intersect(str_split($string), array_merge ($parentheses_op, $parentheses_cl));
+
+        $stacks = array_intersect(str_split($string), $parentheses);
         if (sizeof($stacks)==0) return $message = "В строке нет скобок.";
         elseif (sizeof($stacks)%2==0){
             $i = 0;
-            //$stacks = array_values($stacks);
+            $stacks = array_values($stacks);
             while ($i < sizeof($stacks)) {
                 $key = array_search($stacks[$i], $parentheses_op);
                 if (array_key_exists($i, $stacks) && $stacks[$i] == $parentheses_op[$key] && $stacks[$i + 1] == $parentheses_cl[$key]) {
